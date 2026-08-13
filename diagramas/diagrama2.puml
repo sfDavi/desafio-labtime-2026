@@ -1,0 +1,47 @@
+@startuml
+title Comportamento Dinâmico da Tripulação\nPadrão: STRATEGY
+
+interface IFuncaoTripulante {
+    +executarTarefa(nomeTripulante: string) : void
+    +getNomeFuncao() : string
+}
+
+class OperadorCanhoes {
+    +executarTarefa(nomeTripulante: string) : void
+    +getNomeFuncao() : string
+}
+
+class MecanicoMotor {
+    +executarTarefa(nomeTripulante: string) : void
+    +getNomeFuncao() : string
+}
+
+class PilotoNave {
+    +executarTarefa(nomeTripulante: string) : void
+    +getNomeFuncao() : string
+}
+
+class Tripulante {
+    -nome: string
+    -funcaoAtual: IFuncaoTripulante*
+    +Tripulante(nome: string, funcaoInicial: IFuncaoTripulante*)
+    +setFuncao(novaFuncao: IFuncaoTripulante*) : void
+    +trabalhar() : void
+    +getNome() : string
+    +getFuncaoAtual() : string
+}
+
+IFuncaoTripulante <|.. OperadorCanhoes
+IFuncaoTripulante <|.. MecanicoMotor
+IFuncaoTripulante <|.. PilotoNave
+
+Tripulante o-- IFuncaoTripulante : delega (Context -> Strategy) >
+
+note right of Tripulante
+  Context do Strategy.
+  setFuncao() troca o comportamento
+  em runtime SEM destruir o objeto
+  e SEM if/else para decidir a lógica.
+end note
+
+@enduml

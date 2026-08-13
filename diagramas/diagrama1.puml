@@ -1,0 +1,63 @@
+@startuml
+title Sistema de Contingência do Núcleo da Nave\nPadrão: OBSERVER
+
+interface IObservadorNucleo {
+    +onEnergiaCritica(nivelEnergia: float) : void
+    +onEnergiaRestaurada(nivelEnergia: float) : void
+}
+
+class NucleoEnergia {
+    -nivelEnergia: float
+    -limiarCritico: float
+    -emCrise: bool
+    -observadores: vector<IObservadorNucleo*>
+    +NucleoEnergia(energiaInicial: float, limiar: float)
+    +adicionarObservador(obs: IObservadorNucleo*) : void
+    +removerObservador(obs: IObservadorNucleo*) : void
+    -notificarCrise() : void
+    -notificarRestauracao() : void
+    +tomarDano(valor: float) : void
+    +reduzirEnergia(valor: float) : void
+    +restaurarEnergia(valor: float) : void
+    +getNivelEnergia() : float
+}
+
+class SistemaEscudos {
+    -focoAtual: string
+    +onEnergiaCritica(nivelEnergia: float) : void
+    +onEnergiaRestaurada(nivelEnergia: float) : void
+}
+
+class SistemaLuzes {
+    -acesas: bool
+    +onEnergiaCritica(nivelEnergia: float) : void
+    +onEnergiaRestaurada(nivelEnergia: float) : void
+}
+
+class PainelNavegacao {
+    -alertaAtivo: bool
+    +onEnergiaCritica(nivelEnergia: float) : void
+    +onEnergiaRestaurada(nivelEnergia: float) : void
+}
+
+class SuporteVidaFuturo <<extensão futura, não implementado>> {
+    +onEnergiaCritica(nivelEnergia: float) : void
+    +onEnergiaRestaurada(nivelEnergia: float) : void
+}
+
+IObservadorNucleo <|.. SistemaEscudos
+IObservadorNucleo <|.. SistemaLuzes
+IObservadorNucleo <|.. PainelNavegacao
+IObservadorNucleo <|.. SuporteVidaFuturo : "adicionável sem tocar\nem NucleoEnergia"
+
+NucleoEnergia o-- "0..*" IObservadorNucleo : notifica >
+
+note left of NucleoEnergia
+  Subject do Observer.
+  Conhece apenas a interface
+  IObservadorNucleo — nunca
+  Escudos, Luzes ou Painéis
+  diretamente.
+end note
+
+@enduml

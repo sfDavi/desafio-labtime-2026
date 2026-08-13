@@ -1,0 +1,66 @@
+@startuml
+title Armamento Modular e Modificadores Piratas\nPadrões: STRATEGY (armas base) + DECORATOR (modificadores empilháveis)
+
+interface IArma {
+    +atirar() : string
+    +getDescricao() : string
+}
+
+class LaserContinuo {
+    +atirar() : string
+    +getDescricao() : string
+}
+
+class EnxameMisseis {
+    +atirar() : string
+    +getDescricao() : string
+}
+
+abstract class ModificadorArma {
+    #armaDecorada: IArma*
+    +ModificadorArma(arma: IArma*)
+    +atirar() : string
+    +getDescricao() : string
+}
+
+class DanoDeFogo {
+    +atirar() : string
+    +getDescricao() : string
+}
+
+class PerfuracaoBlindagem {
+    +atirar() : string
+    +getDescricao() : string
+}
+
+class Nave {
+    -armaAtual: IArma*
+    +equiparArma(arma: IArma*) : void
+    +adicionarModificador(fabricaModificador: function<IArma*(IArma*)>) : void
+    +atirar() : void
+}
+
+IArma <|.. LaserContinuo : Strategy concreta
+IArma <|.. EnxameMisseis : Strategy concreta
+IArma <|.. ModificadorArma
+ModificadorArma <|-- DanoDeFogo
+ModificadorArma <|-- PerfuracaoBlindagem
+ModificadorArma o-- IArma : envolve (wrappa) >
+Nave o-- IArma : usa >
+
+note right of Nave
+  Nave só chama atirar() genérico.
+  Não conhece física de disparo
+  nem quantos modificadores
+  estão empilhados.
+end note
+
+note bottom of ModificadorArma
+  Decorators empilháveis:
+  cada modificador envolve a
+  IArma anterior, permitindo
+  combinações infinitas sem
+  criar uma classe por combinação.
+end note
+
+@enduml
