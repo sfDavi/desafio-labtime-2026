@@ -6,10 +6,10 @@ DanoPerfurante::DanoPerfurante(std::shared_ptr<IArma> armaDecorada) : Modificado
 
 std::string DanoPerfurante::atirar() const
 {
-    return armaDecorada_->atirar() + "+ DANO PERFURA BLINDAGEM";
+    return armaDecorada_->atirar() + " + DANO PERFURA BLINDAGEM";
 }
 
 std::string DanoPerfurante::getDescricao() const
 {
-    return armaDecorada_->getDescricao() + " + Perfuracao de Blindagem";
+    return armaDecorada_->getDescricao() + " + Dano Perfurante";
 }

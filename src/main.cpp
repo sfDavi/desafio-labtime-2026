@@ -102,7 +102,7 @@ int main()
     // ---------- Armamento (Strategy + Decorator) ----------
     Nave nave;
 
-    std::cout << "=== Simulador de Contingencia da Nave ===\n";
+    std::cout << "=== Simulador de Contingencia da Nave ===\n\n";
     std::cout << "Nucleo inicia com 100 de energia (limiar critico: 30).\n";
     std::cout << "Tripulantes iniciais: Pedro (operador), Mario (mecanico), Carol (piloto).\n";
     std::cout << "Digite 'ajuda' para ver os comandos disponiveis.\n";

@@ -7,10 +7,10 @@ DanoIncendiario::DanoIncendiario(std::shared_ptr<IArma> armaDecorada) : Modifica
 
 std::string DanoIncendiario::atirar() const
 {
-    return armaDecorada_->atirar() + "+ DANO DE FOGO";
+    return armaDecorada_->atirar() + " + DANO DE INCENDIARIO";
 }
 
 std::string DanoIncendiario::getDescricao() const
 {
-    return armaDecorada_->getDescricao() + " + Dano de fogo";
+    return armaDecorada_->getDescricao() + " + Dano incendiario";
 }
