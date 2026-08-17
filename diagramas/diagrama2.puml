@@ -6,7 +6,7 @@ interface IFuncaoTripulante {
     +getNomeFuncao() : string
 }
 
-class OperadorCanhoes {
+class OperadorArmas {
     +executarTarefa(nomeTripulante: string) : void
     +getNomeFuncao() : string
 }
@@ -16,7 +16,7 @@ class MecanicoMotor {
     +getNomeFuncao() : string
 }
 
-class PilotoNave {
+class Piloto {
     +executarTarefa(nomeTripulante: string) : void
     +getNomeFuncao() : string
 }
@@ -28,12 +28,12 @@ class Tripulante {
     +setFuncao(novaFuncao: IFuncaoTripulante*) : void
     +trabalhar() : void
     +getNome() : string
-    +getFuncaoAtual() : string
+    +getFuncao() : string
 }
 
-IFuncaoTripulante <|.. OperadorCanhoes
+IFuncaoTripulante <|.. OperadorArmas
 IFuncaoTripulante <|.. MecanicoMotor
-IFuncaoTripulante <|.. PilotoNave
+IFuncaoTripulante <|.. Piloto
 
 Tripulante o-- IFuncaoTripulante : delega (Context -> Strategy) >
 
