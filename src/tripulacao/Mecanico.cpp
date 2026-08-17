@@ -3,7 +3,7 @@
 
 void Mecanico::executarTarefa(const std::string &nomeTripulante) const 
 {
-    std::cout << nomeTripulante << "[Mecânico] Realiza reparos no motor.\n"
+    std::cout << nomeTripulante << "[Mecânico] Realiza reparos no motor.\n";
 }
 
 std::string Mecanico::getNomeFuncao() const
