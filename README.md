@@ -1,6 +1,8 @@
 # Desafio Técnico LabTIME
 MVP em C++ que implementa os três tickets do briefing de Game Design, aplicando os padrões de projeto exigidos pelas restrições arquiteturais de cada um. Todo o entregável (diagramas, código e esta documentação) está contido nesta pasta.
 
+O código está comentado no padrão javadoc, e a documentação pode ser gerada com o Doxygen a partir do `Doxyfile` incluído no repositório (`doxygen Doxyfile`), gerando o resultado em `docs/html/index.html`.
+
 ## Mapeamento e Justificativa
 
 ### Ticket 1: Sistema de Contingência do Núcleo → **Observer**

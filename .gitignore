@@ -69,3 +69,6 @@ Testing/
 .cache/
 
 .vscode
+
+# Doxygen generated docs
+docs/
