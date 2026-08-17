@@ -1,17 +1,17 @@
 @startuml
-title Armamento Modular e Modificadores Piratas\nPadrões: STRATEGY (armas base) + DECORATOR (modificadores empilháveis)
+title Armamento Modular e Modificadores Piratas\nPadrões: STRATEGY (armas base) + DECORATOR (modificadores)
 
 interface IArma {
     +atirar() : string
     +getDescricao() : string
 }
 
-class LaserContinuo {
+class Laser {
     +atirar() : string
     +getDescricao() : string
 }
 
-class EnxameMisseis {
+class Misseis {
     +atirar() : string
     +getDescricao() : string
 }
@@ -23,12 +23,12 @@ abstract class ModificadorArma {
     +getDescricao() : string
 }
 
-class DanoDeFogo {
+class DanoIncendiario {
     +atirar() : string
     +getDescricao() : string
 }
 
-class PerfuracaoBlindagem {
+class DanoPerfurante {
     +atirar() : string
     +getDescricao() : string
 }
@@ -40,23 +40,22 @@ class Nave {
     +atirar() : void
 }
 
-IArma <|.. LaserContinuo : Strategy concreta
-IArma <|.. EnxameMisseis : Strategy concreta
+IArma <|.. Laser : Strategy concreta
+IArma <|.. Misseis : Strategy concreta
 IArma <|.. ModificadorArma
-ModificadorArma <|-- DanoDeFogo
-ModificadorArma <|-- PerfuracaoBlindagem
-ModificadorArma o-- IArma : envolve (wrappa) >
+ModificadorArma <|-- DanoIncendiario
+ModificadorArma <|-- DanoPerfurante
+ModificadorArma o-- IArma : envolve >
 Nave o-- IArma : usa >
 
 note right of Nave
   Nave só chama atirar() genérico.
   Não conhece física de disparo
-  nem quantos modificadores
-  estão empilhados.
+  nem modificadores.
 end note
 
 note bottom of ModificadorArma
-  Decorators empilháveis:
+  Decorators:
   cada modificador envolve a
   IArma anterior, permitindo
   combinações infinitas sem
