@@ -1,7 +1,7 @@
 /**
  * @file main.cpp
  * @brief Loop interativo no console. Utilizado para testar os sistemas da nave.
- * O programa fica lendo comandos digitados pelo usuário e reage em tempo real com os objetos criados a partir de padrões de projeto.
+ * O programa fica lendo comandos digitados pelo usuario e reage em tempo real com os objetos criados a partir de padroes de projeto.
  * 
  */
 
@@ -38,13 +38,13 @@ namespace
     void imprimirAjuda()
     {
         std::cout << "\nComandos disponiveis:\n"
-                     "tomar_dano <valor>              -- dano aplicado ao núcleo\n"
-                     "reduzir_energia <valor>         -- consumo de energia do núcleo\n"
-                     "restaurar_energia <valor>       -- restaura energia do núcleo\n"
-                     "status_nucleo                   -- mostra nível de energia e estado\n"
-                     "listar_tripulantes              -- lista tripulantes e funções\n"
-                     "trocar_funcao <nome> <funcao>   -- função: operador | mecânico | piloto\n"
-                     "trabalhar <nome>                -- executa a tarefa da função atual\n"
+                     "tomar_dano <valor>              -- dano aplicado ao nucleo\n"
+                     "reduzir_energia <valor>         -- consumo de energia do nucleo\n"
+                     "restaurar_energia <valor>       -- restaura energia do nucleo\n"
+                     "status_nucleo                   -- mostra nivel de energia e estado\n"
+                     "listar_tripulantes              -- lista tripulantes e funcoes\n"
+                     "trocar_funcao <nome> <funcao>   -- funcao: operador | mecanico | piloto\n"
+                     "trabalhar <nome>                -- executa a tarefa da funcao atual\n"
                      "equipar_arma <tipo>             -- tipo: laser | misseis\n"
                      "adicionar_modificador <tipo>    -- tipo: incendiario | perfurante\n"
                      "atirar                          -- dispara a arma atual\n"
@@ -53,7 +53,7 @@ namespace
     }
 
     /**
-     * @brief Busca um tripulante pelo nome (nullptr se não encontrado).
+     * @brief Busca um tripulante pelo nome (nullptr se nao encontrado).
      */
     Tripulante *encontrarTripulante(std::vector<Tripulante> &tripulacao, const std::string &nome)
     {
@@ -66,7 +66,7 @@ namespace
     }
 
     /**
-     * @brief Fabrica a estratégia concreta correspondente a chave digitada.
+     * @brief Fabrica a estrategia concreta correspondente a chave digitada.
      */
     std::shared_ptr<IFuncaoTripulante> criarFuncaoPorNome(const std::string &chave)
     {
@@ -83,7 +83,7 @@ namespace
 
 int main()
 {
-    // ---------- Núcleo de Energia + Observers ----------
+    // ---------- Nucleo de Energia + Observers ----------
     NucleoEnergia nucleo(100.0f, 30.0f);
     SistemaEscudos escudos;
     SistemaLuzes luzes;
@@ -102,10 +102,10 @@ int main()
     // ---------- Armamento (Strategy + Decorator) ----------
     Nave nave;
 
-    std::cout << "=== Simulador de Contingência da Nave ===\n";
-    std::cout << "Núcleo inicia com 100 de energia (limiar critico: 30).\n";
+    std::cout << "=== Simulador de Contingencia da Nave ===\n";
+    std::cout << "Nucleo inicia com 100 de energia (limiar critico: 30).\n";
     std::cout << "Tripulantes iniciais: Pedro (operador), Mario (mecanico), Carol (piloto).\n";
-    std::cout << "Digite 'ajuda' para ver os comandos disponíveis.\n";
+    std::cout << "Digite 'ajuda' para ver os comandos disponiveis.\n";
 
     std::string linha;
     std::cout << "\n> ";
@@ -146,13 +146,13 @@ int main()
                     nucleo.restaurarEnergia(valor);
 
                 std::cout << "[Nucleo] Energia atual: " << nucleo.getNivelEnergia()
-                          << (nucleo.estaEmCrise() ? " (EM CRISE)" : " (estável)") << "\n";
+                          << (nucleo.estaEmCrise() ? " (EM CRISE)" : " (estavel)") << "\n";
             }
         }
         else if (comando == "status_nucleo")
         {
             std::cout << "[Nucleo] Energia atual: " << nucleo.getNivelEnergia()
-                      << (nucleo.estaEmCrise() ? " (EM CRISE)" : " (estável)") << "\n";
+                      << (nucleo.estaEmCrise() ? " (EM CRISE)" : " (estavel)") << "\n";
         }
         else if (comando == "listar_tripulantes")
         {
@@ -169,16 +169,16 @@ int main()
             auto novaFuncao = criarFuncaoPorNome(funcao);
             if (!t)
             {
-                std::cout << "Tripulante '" << nome << "' não encontrado. Use 'listar_tripulantes'.\n";
+                std::cout << "Tripulante '" << nome << "' nao encontrado. Use 'listar_tripulantes'.\n";
             }
             else if (!novaFuncao)
             {
-                std::cout << "Função inválida. Use: operador | mecanico | piloto\n";
+                std::cout << "Funcao invalida. Use: operador | mecanico | piloto\n";
             }
             else
             {
                 t->setFuncao(novaFuncao);
-                std::cout << t->getNome() << " agora é: " << t->getFuncao() << "\n";
+                std::cout << t->getNome() << " agora e: " << t->getFuncao() << "\n";
             }
         }
         else if (comando == "trabalhar")
@@ -188,7 +188,7 @@ int main()
             Tripulante *t = encontrarTripulante(tripulacao, nome);
             if (!t)
             {
-                std::cout << "Tripulante '" << nome << "' não encontrado. Use 'listar_tripulantes'.\n";
+                std::cout << "Tripulante '" << nome << "' nao encontrado. Use 'listar_tripulantes'.\n";
             }
             else
             {

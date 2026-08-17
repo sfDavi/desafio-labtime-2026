@@ -4,7 +4,7 @@
 
 /**
  * @brief Classe concreta da Strategy.
- *  Comportamento do tripulante com função Operador de Armas.
+ *  Comportamento do tripulante com funcao Operador de Armas.
  */
 class OperadorArmas : public IFuncaoTripulante
 {

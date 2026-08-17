@@ -4,7 +4,7 @@
 
 /**
  * @brief Decorador abstrato (Decorator).
- * Decora uma IArma, aplicando um efeito de modificador para a arma sem precisar criar uma classe nova para cada combinação possível de arma + modificador.
+ * Decora uma IArma, aplicando um efeito de modificador para a arma sem precisar criar uma classe nova para cada combinacao possivel de arma + modificador.
  */
 class ModificadorArma : public IArma
 {

@@ -2,7 +2,7 @@
 #include "IArma.h"
 
 /**
- * @brief Estrategia concreta (Strategy): representa a arma lançadora de mísseis.
+ * @brief Estrategia concreta (Strategy): representa a arma lancadora de misseis.
  */
 class Misseis : public IArma
 {

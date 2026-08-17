@@ -3,7 +3,7 @@
 #include "ModificadorArma.h"
 
 /**
- * @brief Decorador concreto (Decorator)): adiciona efeito de perfuração de blindagem.
+ * @brief Decorador concreto (Decorator)): adiciona efeito de perfuracao de blindagem.
  */
 class DanoPerfurante : public ModificadorArma
 {

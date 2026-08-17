@@ -4,7 +4,7 @@
 void SistemaLuzes::onEnergiaCritica(float nivelEnergia)
 {
     acesas_ = false;
-    std::cout << "[Sistema de Luzes] Energia em nível crítico (" << nivelEnergia << ")! Apagando as luzes.";
+    std::cout << "[Sistema de Luzes] Energia em nivel critico (" << nivelEnergia << ")! Apagando as luzes.";
 }
 
 void SistemaLuzes::onEnergiaRestaurada(float nivelEnergia)

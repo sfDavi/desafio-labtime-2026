@@ -4,7 +4,7 @@
 
 /**
  * @brief Classe concreta da Strategy.
- *  Comportamento do tripulante com função Mecânico.
+ *  Comportamento do tripulante com funcao Mecanico.
  */
 class Mecanico : public IFuncaoTripulante
 {

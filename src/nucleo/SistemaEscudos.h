@@ -14,5 +14,5 @@ public:
     void onEnergiaRestaurada(float nivelEnergia) override;
 
 private:
-    std::string focoAtual_ = "defesa padrão";
+    std::string focoAtual_ = "defesa padrao";
 };

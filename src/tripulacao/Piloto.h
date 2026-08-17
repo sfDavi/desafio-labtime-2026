@@ -4,7 +4,7 @@
 
 /**
  * @brief Classe concreta da Strategy.
- *  Comportamento do tripulante com função Piloto.
+ *  Comportamento do tripulante com funcao Piloto.
  */
 class Piloto : public IFuncaoTripulante
 {

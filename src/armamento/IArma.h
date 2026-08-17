@@ -3,7 +3,7 @@
 
 /**
  * @brief Interface para armas (Strategy) e modificadores (Decorator).
- * Classes de armas concretas e modificadores implementam esta interface permitindo combinações no metodo atirar().
+ * Classes de armas concretas e modificadores implementam esta interface permitindo combinacoes no metodo atirar().
  *
  */
 class IArma
@@ -17,7 +17,7 @@ public:
     virtual std::string atirar() const = 0;
 
     /**
-     * @brief Descreve a configuração da arma atual
+     * @brief Descreve a configuracao da arma atual
      */
     virtual std::string getDescricao() const = 0;
 };

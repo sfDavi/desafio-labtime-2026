@@ -5,19 +5,19 @@
 
 /**
  *@brief Subject do Observer.
- *Representa o núcleo de energia.
+ *Representa o nucleo de energia.
  */
 class NucleoEnergia
 {
 public:
     /**
-     * @param energiaInicial Nível de energia inicial (0-100).
-     * @param limiarCritico Nível máximo de energia considerado crítico.
+     * @param energiaInicial Nivel de energia inicial (0-100).
+     * @param limiarCritico Nivel maximo de energia considerado critico.
      */
     explicit NucleoEnergia(float energiaInicial = 100.0f, float limiarCritico = 30.0f);
 
     /**
-     * @brief Registra um novo observador que recebe notificações de crises de energia.
+     * @brief Registra um novo observador que recebe notificacoes de crises de energia.
      */
     void adicionarObservador(IObservadorNucleo *observador);
 
@@ -27,29 +27,29 @@ public:
     void removerObservador(IObservadorNucleo *observador);
 
     /**
-     * @brief Aplica dano ao núcleo reduzindo nível de energia.
+     * @brief Aplica dano ao nucleo reduzindo nivel de energia.
      */
     void tomarDano(float valor);
 
     /**
-     * @brief Reduz nível de energia.
+     * @brief Reduz nivel de energia.
      */
     void reduzirEnergia(float valor);
 
     /**
-     * @brief Restaura nível de energia.
+     * @brief Restaura nivel de energia.
      */
     void restaurarEnergia(float valor);
 
     /**
      * @brief
-     *@return Nível atual de energia.
+     *@return Nivel atual de energia.
      */
     float getNivelEnergia() const;
 
     /**
      * @brief
-     * @return true quando o núcleo está com energia em nível crítico.
+     * @return true quando o nucleo esta com energia em nivel critico.
      */
     bool estaEmCrise() const;
 

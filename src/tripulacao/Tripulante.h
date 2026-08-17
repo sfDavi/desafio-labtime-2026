@@ -5,8 +5,8 @@
 
 /**
  * @brief Representa um NPC tripulante.
- * A "estratégia" da função pode ser trocada em tempo real com setFuncao() sem precisar destruir ou recriar o tripulante.
- * A classe não conhece cada função concreta que o tripulante pode exercer, podem ser adicionadas novas funções ao código sem alterar esta classe. 
+ * A "estrategia" da funcao pode ser trocada em tempo real com setFuncao() sem precisar destruir ou recriar o tripulante.
+ * A classe nao conhece cada funcao concreta que o tripulante pode exercer, podem ser adicionadas novas funcoes ao codigo sem alterar esta classe. 
  */
 class Tripulante
 {
@@ -14,12 +14,12 @@ public:
     Tripulante(std::string nome, std::shared_ptr<IFuncaoTripulante> funcaoInicial);
 
     /**
-     * @brief Altera a função do tripulante (padrão strategy).
+     * @brief Altera a funcao do tripulante (padrao strategy).
      */
     void setFuncao(std::shared_ptr<IFuncaoTripulante> novaFuncao);
 
     /**
-     * @brief Chama a execução de tarefa do tripulante presente na estratégia da função atual.
+     * @brief Chama a execucao de tarefa do tripulante presente na estrategia da funcao atual.
      */
     void trabalhar() const;
 

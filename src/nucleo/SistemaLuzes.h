@@ -4,7 +4,7 @@
 
 /**
  * @brief Observer concreto. 
- * Administra o apagamento de luzes com em níveis críticos de energia.
+ * Administra o apagamento de luzes com em niveis criticos de energia.
  */
 class SistemaLuzes : public IObservadorNucleo
 {

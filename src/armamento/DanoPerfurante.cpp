@@ -11,5 +11,5 @@ std::string DanoPerfurante::atirar() const
 
 std::string DanoPerfurante::getDescricao() const
 {
-    return armaDecorada_->getDescricao() + " + Perfuração de Blindagem";
+    return armaDecorada_->getDescricao() + " + Perfuracao de Blindagem";
 }

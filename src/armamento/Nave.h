@@ -8,7 +8,7 @@
  * @brief Representa a nave, armazena status de armamento e emite o comando de atirar.
  *
  * A Nave so conhece a interface IArma e emite um comando generico
- * atirar(). Não conhece a arma atual ou seus modificadores (Decorators).
+ * atirar(). Nao conhece a arma atual ou seus modificadores (Decorators).
  */
 class Nave
 {
@@ -19,8 +19,8 @@ public:
     void equiparArma(std::shared_ptr<IArma> arma);
 
     /**
-     * @brief Utiliza o padrão decorator para adicionar um modificador na arma.
-     * @param fabricaModificador função que recebe a arma atual e devolve a arma decorada.
+     * @brief Utiliza o padrao decorator para adicionar um modificador na arma.
+     * @param fabricaModificador funcao que recebe a arma atual e devolve a arma decorada.
      */
     void adicionarModificador(const std::function<std::shared_ptr<IArma>(std::shared_ptr<IArma>)> &fabricaModificador);
 

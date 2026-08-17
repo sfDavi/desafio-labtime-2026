@@ -4,7 +4,7 @@
 void PainelNavegacao::onEnergiaCritica(float nivelEnergia)
 {
     alertaAtivo_ = true;
-    std::cout << "[Alerta!] Energia em nível crítico (" << nivelEnergia << ").\n";
+    std::cout << "[Alerta!] Energia em nivel critico (" << nivelEnergia << ").\n";
 }
 
 void PainelNavegacao::onEnergiaRestaurada(float nivelEnergia)
