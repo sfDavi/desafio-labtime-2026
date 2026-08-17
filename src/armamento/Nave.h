@@ -35,4 +35,4 @@ public:
 
 private:
     std::shared_ptr<IArma> armaAtual_;
-}
+};

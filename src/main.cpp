@@ -158,7 +158,7 @@ int main()
         {
             for (auto &t : tripulacao)
             {
-                std::cout << "  - " << t.getNome() << " : " << t.getFuncaoAtual() << "\n";
+                std::cout << "  - " << t.getNome() << " : " << t.getFuncao() << "\n";
             }
         }
         else if (comando == "trocar_funcao")
@@ -178,7 +178,7 @@ int main()
             else
             {
                 t->setFuncao(novaFuncao);
-                std::cout << t->getNome() << " agora é: " << t->getFuncaoAtual() << "\n";
+                std::cout << t->getNome() << " agora é: " << t->getFuncao() << "\n";
             }
         }
         else if (comando == "trabalhar")
@@ -200,9 +200,9 @@ int main()
             std::string tipo;
             iss >> tipo;
             if (tipo == "laser")
-                nave.equiparArma(std::make_shared<LaserContinuo>());
+                nave.equiparArma(std::make_shared<Laser>());
             else if (tipo == "misseis")
-                nave.equiparArma(std::make_shared<EnxameMisseis>());
+                nave.equiparArma(std::make_shared<Misseis>());
             else
                 std::cout << "Arma invalida. Use: laser | misseis\n";
         }

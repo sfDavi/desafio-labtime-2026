@@ -20,4 +20,4 @@ public:
      * @brief Descreve a configuração da arma atual
      */
     virtual std::string getDescricao() const = 0;
-}
+};

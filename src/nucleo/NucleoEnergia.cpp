@@ -4,7 +4,7 @@
 NucleoEnergia::NucleoEnergia(float energiaInicial, float limiarCritico)
     : nivelEnergia_(energiaInicial), limiarCritico_(limiarCritico), emCrise_(false) {}
 
-void NucleoEnergia::adicionarObsvervador(IObservadorNucleo *observador)
+void NucleoEnergia::adicionarObservador(IObservadorNucleo *observador)
 {
     observadores_.push_back(observador);
 }

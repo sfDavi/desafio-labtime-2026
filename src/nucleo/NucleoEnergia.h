@@ -19,7 +19,7 @@ public:
     /**
      * @brief Registra um novo observador que recebe notificações de crises de energia.
      */
-    void adicionarObsvervador(IObservadorNucleo *observador);
+    void adicionarObservador(IObservadorNucleo *observador);
 
     /**
      *@brief Remove um observador.

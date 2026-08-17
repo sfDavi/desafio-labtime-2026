@@ -9,4 +9,4 @@ class Laser : public IArma
 public:
     std::string atirar() const override;
     std::string getDescricao() const override;
-}
+};

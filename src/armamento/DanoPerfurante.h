@@ -5,10 +5,10 @@
 /**
  * @brief Decorador concreto (Decorator)): adiciona efeito de perfuração de blindagem.
  */
-class PerfuracaoBLindagem : public ModificadorArma
+class DanoPerfurante : public ModificadorArma
 {
 public:
-    explicit PerfuracaoBLindagem(std::shared_ptr<IArma> armaDecorada);
+    explicit DanoPerfurante(std::shared_ptr<IArma> armaDecorada);
     std::string atirar() const override;
     std::string getDescricao() const override;
-}
+};
